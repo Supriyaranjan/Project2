@@ -1,0 +1,23 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": false
+        },
+        {
+            "path": "CustomBasePackage",
+            "package": "CustomBasePackage",
+            "versionName": "ver 0.1",
+            "versionNumber": "0.1.0.NEXT",
+            "default": true
+        }
+    ],
+    "name": "CarShopProject",
+    "namespace": "",
+    "sfdcLoginUrl": "https://resilient-wolf-7e3p5z-dev-ed.my.salesforce.com/",
+    "sourceApiVersion": "52.0",
+    "packageAliases": {
+        "CustomBasePackage": "0Ho5f000000KzAQCA0",
+        "CustomBasePackage@0.1.0-1": "04t5f000000n4puAAA"
+    }
+}

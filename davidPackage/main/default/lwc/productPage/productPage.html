@@ -1,0 +1,26 @@
+<template>
+    <p> Products Page </p>
+    <template if:true={showProductButton}>
+        <lightning-button label="Display products" onclick={displayProducts}></lightning-button>
+    </template>
+
+    <template if:true={showProducts}>
+        <lightning-button label="Make Order" onclick={displayOrder}></lightning-button>
+        <template for:each={pData} for:item="product">
+            <p key={product.id}> {product.Name} - ${product.price} ea.</p>
+            <p key={product.id}> {product.Description}</p>
+            <img key={product.id} src={product.image} height='200' width='200'> 
+            
+            <div key={product.id} class="slds-grid slds-gutters">
+                <div key={product.id} class="slds-col slds-size_1-of-12"> <lightning-button key={product.id} label="-" onclick={decreaseQuant} value={product}></lightning-button> </div>
+                <div key={product.id} class="slds-col slds-size_1-of-12">  {product.quantity} </div>
+                <div key={product.id} class="slds-col slds-size_1-of-12"> <lightning-button key={product.id} label="+" onclick={increaseQuant} value={product}></lightning-button> </div>
+            </div>
+
+        </template>
+    </template>
+    <template if:true={showOrder}>
+        <lightning-button label="Go Back" onclick={goBack}></lightning-button>
+        <c-order-page order={cart}></c-order-page>
+    </template>
+</template>

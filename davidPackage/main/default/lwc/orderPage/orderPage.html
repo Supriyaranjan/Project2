@@ -1,0 +1,19 @@
+<template>
+    
+
+    <template if:true={displayOrder}>
+        <p> Confirm Your Order</p>
+        <p> User Id {userId}</p>
+        <template for:each={order} for:item="orderItem">
+            <p key={orderItem.id}> {orderItem.Name} Quantity: {orderItem.quantity} and Price: ${orderItem.total}</p>
+            <img key={orderItem.id} src={orderItem.image} height='200' width='200'/>        
+        </template>
+    </template>
+
+
+    <lightning-button label="Calculate Total" onclick={orderTotal}></lightning-button>
+    <template if:true={showTotal}>
+        <p> Your total is : ${total}</p>
+    </template>
+
+</template>

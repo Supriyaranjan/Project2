@@ -1,4 +1,4 @@
-public with sharing class DataFactory {
+public with sharing class DavidDataFactory {
     
 
     //createProducts

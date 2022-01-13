@@ -11,7 +11,7 @@ public with sharing class productPageControllerTest {
         List<Product2> testProducts = new List<Product2>();
         Boolean result;
         //create dummy data 
-        List<Product2> currProducts = DataFactory.createProducts(3);
+        List<Product2> currProducts = DavidDataFactory.createProducts(3);
         //insert them 
         insert currProducts;
         //test function

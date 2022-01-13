@@ -10,16 +10,16 @@ public with sharing class ContractTriggerHelperTest {
         Test.startTest();
         //variables for the contract 
         Boolean result;
-        Account newAccount = DataFactory.createAccount();
+        Account newAccount = DavidDataFactory.createAccount();
         insert newAccount;
         Account currAccount = [SELECT Id, Name FROM Account WHERE Name = 'Test'];
-        Contact newContact = DataFactory.createContact(currAccount.Id);
+        Contact newContact = DavidDataFactory.createContact(currAccount.Id);
         insert newContact;
         Contact currContact = [SELECT Id, Name FROM Contact WHERE FirstName = 'Test'];
         //create a viable contract 
         List<Contract> newContracts = new List<Contract>();
         //load the list with one contract
-        newContracts.add(DataFactory.createContract(currAccount.Id, currContact.Id));
+        newContracts.add(DavidDataFactory.createContract(currAccount.Id, currContact.Id));
         //pass it to the function
         result = ContractTriggerHelper.contactDuplicate(newContracts);
         //check results
@@ -37,7 +37,7 @@ public with sharing class ContractTriggerHelperTest {
         //variables for contract
         Boolean result;
         //NO CONTACT__C TEST
-        Account newAccount = DataFactory.createAccount();
+        Account newAccount = DavidDataFactory.createAccount();
         insert newAccount;
         Account currAccount = [SELECT Id, Name FROM Account WHERE Name = 'Test'];
         //Make contract
@@ -56,18 +56,18 @@ public with sharing class ContractTriggerHelperTest {
         //variables for contract
         Boolean result;
         //DUPLICATE CONTACT 
-        Account newAccount = DataFactory.createAccount();
+        Account newAccount = DavidDataFactory.createAccount();
         insert newAccount;
         Account currAccount = [SELECT Id, Name FROM Account WHERE Name = 'Test'];
-        Contact newContact = DataFactory.createContact(currAccount.Id);
+        Contact newContact = DavidDataFactory.createContact(currAccount.Id);
         insert newContact;
         Contact currContact = [SELECT Id, Name FROM Contact WHERE FirstName = 'Test'];
         //create the duplicate contract 
-        Contract dupContract = DataFactory.createContract(currAccount.Id, currContact.Id);
+        Contract dupContract = DavidDataFactory.createContract(currAccount.Id, currContact.Id);
         insert dupContract;
         //create a new contract with the same info 
         List<Contract> newContracts = new List<Contract>();
-        newContracts.add(DataFactory.createContract(currAccount.Id, currContact.Id));
+        newContracts.add(DavidDataFactory.createContract(currAccount.Id, currContact.Id));
         //pass it to the function
         result = ContractTriggerHelper.contactDuplicate(newContracts);
         //check results
@@ -81,14 +81,14 @@ public with sharing class ContractTriggerHelperTest {
     public static void TP_ContractTrigger(){
         Test.startTest();
         //variables for contract 
-        Account newAccount = DataFactory.createAccount();
+        Account newAccount = DavidDataFactory.createAccount();
         insert newAccount;
         Account currAccount = [SELECT Id, Name FROM Account WHERE Name = 'Test'];
-        Contact newContact = DataFactory.createContact(currAccount.Id);
+        Contact newContact = DavidDataFactory.createContact(currAccount.Id);
         insert newContact;
         Contact currContact = [SELECT Id, Name FROM Contact WHERE FirstName = 'Test'];
         //create the contract variable 
-        Contract newContract = DataFactory.createContract(currAccount.Id, currContact.Id);
+        Contract newContract = DavidDataFactory.createContract(currAccount.Id, currContact.Id);
         //insert so we can save the result
         Database.SaveResult result = Database.insert(newContract, false);
         //check result

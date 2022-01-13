@@ -3,6 +3,7 @@
 
     <template if:true={displayOrder}>
         <p> Confirm Your Order</p>
+        <p> Your user ID = {testId}</p>
         <template for:each={order} for:item="orderItem">
             <p key={orderItem.id}> {orderItem.Name} Quantity: {orderItem.quantity} and Price: ${orderItem.total}</p>
             <img key={orderItem.id} src={orderItem.image} height='200' width='200'/>        
@@ -14,6 +15,11 @@
     <template if:true={showTotal}>
         <p> Your total is : ${total}</p>
         <lightning-button label="Confirm" onclick={confirmOrder}></lightning-button> 
+    </template>
+
+    <template if:true={finalize}>
+        <p> Place Order of ${total}</p>
+        <lightning-button label="Place Order" onclick={placeOrder}></lightning-button> 
     </template>
 
 </template>

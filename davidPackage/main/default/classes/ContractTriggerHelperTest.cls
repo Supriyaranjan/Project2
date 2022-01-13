@@ -102,7 +102,7 @@ public with sharing class ContractTriggerHelperTest {
     public static void TN_ContractTriggerNoContact(){
         Test.startTest();
         //variables for contract
-        Account newAccount = DataFactory.createAccount();
+        Account newAccount = DavidDataFactory.createAccount();
         insert newAccount;
         Account currAccount = [SELECT Id, Name FROM Account WHERE Name = 'Test'];
 
@@ -123,16 +123,16 @@ public with sharing class ContractTriggerHelperTest {
         //variables for contract
         Integer testLimit = 200;
         List<Database.SaveResult> resultList;
-        List<Account> newAccounts = DataFactory.createAccounts(testLimit);
+        List<Account> newAccounts = DavidDataFactory.createAccounts(testLimit);
         insert newAccounts;
         List<Account> currAccounts = [SELECT Id, Name FROM Account WHERE Name LIKE 'Test%' LIMIT :testLimit];
 
-        List<Contact> newContacts = DataFactory.createContacts(testLimit, currAccounts);
+        List<Contact> newContacts = DavidDataFactory.createContacts(testLimit, currAccounts);
         insert newContacts;
         List<Contact> currContacts = [SELECT Id, Name FROM Contact WHERE Name LIKE 'Test%' LIMIT :testLimit];
 
         //create some contracts with unique contactIds
-        List<Contract> newContracts = DataFactory.createContracts(currAccounts, currContacts, testLimit);
+        List<Contract> newContracts = DavidDataFactory.createContracts(currAccounts, currContacts, testLimit);
 
         //insert into database
         resultList = Database.insert(newContracts, false);

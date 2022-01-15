@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Order History" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <template if:true={orders.data}>
+                <template for:each={orders.data} for:item="order">
+                    <a href='#' key={order.Id}>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                              <span>Order Number: {order.OrderNumber}</span>
+                            </div>
+                            <div class="slds-col">
+                              <span>Date: {order.EffectiveDate}</span>
+                            </div>
+                          </div>    
+                    </a>
+                </template>
+            </template>
+           
+        </div>
+    </lightning-card>
+</template>

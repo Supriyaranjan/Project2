@@ -5,6 +5,7 @@ import { LightningElement, api } from 'lwc';
 
 export default class OrderPage extends LightningElement {
     @api order;
+    @api useridfromsupriya;
     contactId = '';
     message = 'Hello from order';
     displayOrder = true;
@@ -24,10 +25,11 @@ export default class OrderPage extends LightningElement {
         for(let i = 0; i < this.order.length; i++){
             this.total += (this.order[i].price * this.order[i].quantity);
         }//end for i
+        console.log('Here is the message ' + this.useridfromsupriya);
     }//end orderTotal
 
     confirmOrder(){
-        createOrder({userId: Id})
+        createOrder({userId: this.useridfromsupriya})
         .then(result =>{
             console.log('Order Confirmed ' + result);
             this.contactId = result;

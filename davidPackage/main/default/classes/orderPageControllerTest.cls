@@ -50,8 +50,6 @@ public with sharing class orderPageControllerTest {
                 unitPrices.add(1000.00);
             }//end for i
 
-
-
             //start probing the order items 
             result = orderPageController.createOrderItems(currContact.Id, product2Ids, quantities, unitPrices, amount);
 

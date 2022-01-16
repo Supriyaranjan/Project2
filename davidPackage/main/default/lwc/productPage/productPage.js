@@ -8,6 +8,7 @@ import {pics} from 'c/productPhotos';
 export default class ProductPage extends LightningElement {
 
     @track pData = [];
+    @api myId;
     cart = [];
     showProducts = false;
     showProductButton = true;

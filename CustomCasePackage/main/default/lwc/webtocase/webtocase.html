@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Submit a case!" icon-name="standard:case">
+        <span>{displayResponseMessage}</span>
+        <template if:true={displayForm}>
+            <lightning-record-edit-form object-api-name="Case" onsuccess={handleSuccess} onerror={handleError}>
+                <lightning-messages data-id='formerror'> </lightning-messages>
+                <lightning-input-field field-name={caseType}> </lightning-input-field>
+                <lightning-input-field field-name={caseReason}> </lightning-input-field>
+                <lightning-input-field field-name={caseSubject}> </lightning-input-field>
+                <lightning-input-field field-name={caseDescription}> </lightning-input-field>
+                <lightning-input-field field-name={caseOriginSource} value="Web" class="slds-hide"></lightning-input-field>
+                <lightning-button
+                    class="slds-var-m-top_medium"
+                    type="submit"
+                    label="Submit"
+                    style="font-size: larger; "
+                >
+                </lightning-button>
+            </lightning-record-edit-form>
+        </template> 
+    </lightning-card>  
+</template>

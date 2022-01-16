@@ -1,0 +1,31 @@
+<aura:component implements="force:appHostable, flexipage:availableForAllPageTypes, flexipage:availableForRecordHome, force:hasRecordId, forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="userId" type="String" />
+    <aura:attribute name="showCase" type="Boolean" default="false" />
+    <aura:attribute name="showHome" type="Boolean" default="false" />
+    <aura:attribute name="showOrder" type="Boolean" default="false" />
+    <aura:attribute name="showFutureCar" type="Boolean" default="false" />
+    <div>User ID is : {!v.userId}</div>
+         <div>
+            <lightning:button label="Home" onclick="{!c.dispHomeTab}" class="slds-m-left_x-small btn" ></lightning:button>
+            <lightning:button label="Order" onclick="{!c.dispOrderTab}" class="slds-m-left_x-small btn" ></lightning:button>  
+            <lightning:button label="Help" onclick="{!c.dispCaseTab}" class="slds-m-left_x-small btn" ></lightning:button> 
+            <lightning:button label="Future Cars" onclick="{!c.dispFutureTab}" class="slds-m-left_x-small btn" ></lightning:button>
+         </div>
+         
+         <br></br>
+         <aura:If isTrue="{!v.showHome}">
+            <p>This is home tab</p>
+        </aura:If>
+        <aura:If isTrue="{!v.showOrder}">
+            <c:productPage myId="{!v.userId}"/>
+        </aura:If>
+        <aura:If isTrue="{!v.showCase}">
+         <div>
+             <c:displayfaq></c:displayfaq>
+         </div>
+        </aura:If>
+        <aura:If isTrue="{!v.showFutureCar}">
+            <c:FutureCarAuraApp></c:FutureCarAuraApp>
+        </aura:If>
+</aura:component>	

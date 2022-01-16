@@ -1,0 +1,21 @@
+<aura:component controller='CaseWebController' implements="force:appHostable, flexipage:availableForAllPageTypes, flexipage:availableForRecordHome, force:hasRecordId, forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />   
+    <aura:attribute name="faqs" type="FAQ__c[]"/>
+    <div class="formsect">
+        <c:webtocase></c:webtocase>
+    </div>
+    <div class="rightsect">
+        <lightning:card title="Case FAQs!" iconName="standard:case">
+            <c:searchfaq onfaqresult="{!c.getFaqResult}"></c:searchfaq>
+            <lightning:accordion aura:id="accordion" >
+                <aura:iteration items="{!v.faqs}" var="item" indexVar="index">
+                    <lightning:accordionSection name="{!item.Name}" label="{!item.Question__c}">
+                        <aura:set attribute="body">
+                            <p>FAQ Answer: {!item.Answer__c}</p>
+                        </aura:set>
+                    </lightning:accordionSection>
+                </aura:iteration>
+            </lightning:accordion>
+        </lightning:card>
+    </div>
+</aura:component>	

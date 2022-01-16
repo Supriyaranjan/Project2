@@ -1,0 +1,16 @@
+
+.THIS.formsect{
+	width: 50%;
+    float: left;
+    text-align: left;
+	font-family: georgia, "times new roman", serif;
+	font-style: italic;
+}
+
+.THIS.rightsect{
+	width: 48%;
+    float: right;
+    text-align: left;
+	font-family: georgia, "times new roman", serif;
+	font-style: italic;
+}

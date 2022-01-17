@@ -25,6 +25,8 @@ public with sharing class CaseWebControllerTest {
         catch(Exception exp){
             System.assert(false);
         }
+
+        Test.stopTest();
     }
 
     @isTest
@@ -48,7 +50,7 @@ public with sharing class CaseWebControllerTest {
         catch(Exception exp){
             System.assert(false);
         }
-        
+        Test.stopTest();
     }
 
     @isTest
@@ -72,6 +74,6 @@ public with sharing class CaseWebControllerTest {
         catch(Exception exp){
             System.assert(false);
         }
-        
+        Test.stopTest();
     }
 }

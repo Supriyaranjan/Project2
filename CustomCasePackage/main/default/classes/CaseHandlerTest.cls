@@ -17,6 +17,8 @@ public with sharing class CaseHandlerTest {
             delete case1;
         } catch (Exception error) {
             System.assert(true);
-        }   
+        }
+        
+        Test.stopTest();
     }
 }

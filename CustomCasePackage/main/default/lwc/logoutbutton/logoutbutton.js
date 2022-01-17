@@ -7,9 +7,9 @@ userName;
     logout()
      {
         console.log('logout');
-       window.location.replace("https://testaur-developer-edition.na163.force.com/ExperienceTest/login");
-
-     }
-     
+       window.location.replace("https://teamamplifire-developer-edition.na213.force.com/login");
+      // window.location.replace("https://teamamplifire-developer-edition.na213.force.com/servlet/networks/switch?startURL=%2Fsecur%2Flogout.jsp");
+    
+     } 
 
 }

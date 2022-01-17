@@ -13,6 +13,7 @@ export default class Searchfaq extends LightningElement {
     @track
     myTopics = [];
 
+    //get all the unique FAQ topics
     connectedCallback()
     {
         this.myTopics = [];

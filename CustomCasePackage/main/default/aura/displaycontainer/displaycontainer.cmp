@@ -5,15 +5,14 @@
 <aura:attribute name="showHome" type="Boolean" default="false" />
 <div>User ID is : {!v.userId}</div>
 <div><c:logoutbutton userName="{!v.userId}"></c:logoutbutton></div>
-     <div style="margin-top: 20px; margin-bottom: 10px;background-color:white;">
+     <div style="margin-top: 20px; margin-bottom: 10px;background-color: lightgray;">
         <lightning:button label="Home" onclick="{!c.dispHomeTab}" class="slds-m-left_x-small btn" ></lightning:button>
         <lightning:button label="Case" onclick="{!c.dispCaseTab}" class="btn" ></lightning:button> 
      </div>
      <aura:If isTrue="{!v.showCase}">
-     <div>
+     <div class="body">
          <c:displayfaq></c:displayfaq>
      </div>
     </aura:If>
-    <aura:If isTrue="{!v.showHome}">This is home page</aura:If>
-
+    <aura:If isTrue="{!v.showHome}"><div class="body">This is home page</div></aura:If>
 </aura:component>	

@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-
+//import all fields that need to be displayed on the form
 import Reason from '@salesforce/schema/Case.Reason';
 import Subject from '@salesforce/schema/Case.Subject';
 import CaseSource from '@salesforce/schema/Case.Origin'
@@ -29,6 +29,7 @@ export default class Webtocase extends LightningElement {
 
     caseId;
 
+    //event handler for success
     handleSuccess(event){
         this.displayForm = false;
         this.caseId = event.detail.id;
@@ -37,6 +38,7 @@ export default class Webtocase extends LightningElement {
 
     }
 
+    //event handler for error scenario
     handleError(){
         this.template.querySelector('[data-id="formerror"]').setError('Fail to create Case');
     }

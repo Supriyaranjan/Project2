@@ -5,27 +5,36 @@
     <aura:attribute name="showHome" type="Boolean" default="false" />
     <aura:attribute name="showOrder" type="Boolean" default="false" />
     <aura:attribute name="showFutureCar" type="Boolean" default="false" />
-    <div>User ID is : {!v.userId}</div>
+    <aura:attribute name="showCarImages" type="Boolean" default="false" />
+    <div></div>
+    
          <div>
             <lightning:button label="Home" onclick="{!c.dispHomeTab}" class="slds-m-left_x-small btn" ></lightning:button>
             <lightning:button label="Order" onclick="{!c.dispOrderTab}" class="slds-m-left_x-small btn" ></lightning:button>  
             <lightning:button label="Help" onclick="{!c.dispCaseTab}" class="slds-m-left_x-small btn" ></lightning:button> 
             <lightning:button label="Future Cars" onclick="{!c.dispFutureTab}" class="slds-m-left_x-small btn" ></lightning:button>
+            <lightning:button label="Car Images" onclick="{!c.dispCarImagesTab}" class="slds-m-left_x-small btn" ></lightning:button>
          </div>
          
          <br></br>
+         <!--Home page-->
          <aura:If isTrue="{!v.showHome}">
-            <p>This is home tab</p>
+            <c:orderList></c:orderList>
         </aura:If>
+        <!--Order page-->
         <aura:If isTrue="{!v.showOrder}">
             <c:productPage myId="{!v.userId}"/>
         </aura:If>
+        <!--Case and FAQ page-->
         <aura:If isTrue="{!v.showCase}">
-         <div>
              <c:displayfaq></c:displayfaq>
-         </div>
         </aura:If>
+        <!--Future car page-->
         <aura:If isTrue="{!v.showFutureCar}">
             <c:FutureCarAuraApp></c:FutureCarAuraApp>
+        </aura:If>
+        <!--Car images page-->
+        <aura:If isTrue="{!v.showCarImages}">
+            <c:fetchcarimage></c:fetchcarimage>
         </aura:If>
 </aura:component>	

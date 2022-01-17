@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="Car name"  maxlength="10" value={input} onchange={carTextChange}></lightning-input>  
+    </div>
+    <div class="slds-p-around_medium">
+    <lightning-button label="Get Car Image" icon-name="standard:search" onclick={getCarImage}></lightning-button>
+    </div>
+    <br>
+    <div style="width: 300px; min-height: 300px; border: 2px solid red">
+        <template if:true={displayImage}>
+            <img style="width: 300px;height: 300px;border: 1px solid white;padding: 2px;" src={carImageUrl} alt="Display Car Image" />
+        </template>
+    </div>
+    
+</template>

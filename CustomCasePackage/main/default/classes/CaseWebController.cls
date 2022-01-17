@@ -1,5 +1,5 @@
 public with sharing class CaseWebController {
-
+//Function to get FAQ list
     @AuraEnabled
     public static List<FAQ__c> GetFAQList(){
         try 
@@ -12,6 +12,7 @@ public with sharing class CaseWebController {
         }
     }
 
+    //function to get FAQ list by topic
     @AuraEnabled
     public static List<FAQ__c> GetFAQByTopic(String topicName){
     try {
@@ -30,6 +31,7 @@ public with sharing class CaseWebController {
     
     }
 
+    //Function to get unique FAQ topics
     @AuraEnabled
     public static List<String> GetFAQTopic(){
     try {

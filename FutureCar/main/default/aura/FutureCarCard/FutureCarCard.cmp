@@ -1,0 +1,10 @@
+<aura:component controller="FutureProductController" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="car" type="Product2" />
+    <lightning:card title="{!v.car.Name}" footer="{!v.car.Description}">
+        <p class="slds-p-horizontal_small">
+            <img class="futureCarImage" src="{!($Resource.FutureCar + v.car.DisplayUrl)}" />
+            {!v.car.ProductCode} <br/>
+            {!v.car.Description}            
+        </p>
+    </lightning:card>
+</aura:component>

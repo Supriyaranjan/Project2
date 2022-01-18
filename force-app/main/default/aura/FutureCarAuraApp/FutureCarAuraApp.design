@@ -1,0 +1,5 @@
+<design:component  label="FutureCarAuraApp">
+    <design:attribute name="showCurrentproduct" label="Subject" description="Name of the person you want to greet" />
+    <design:attribute name="greeting" label="Greeting" />
+    <design:attribute name="subject" label="Subject" description="Name" />
+</design:component>

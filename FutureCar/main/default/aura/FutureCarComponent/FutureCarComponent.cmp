@@ -1,0 +1,9 @@
+<aura:component controller="FutureProductController" implements="flexipage:availableForAllPageTypes" >
+    <aura:attribute name="futureCars" type="Product2[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.Initialize}" />
+    <div class="FutureCars">
+        <aura:iteration items="{!v.futureCars}" var="car">
+            <c:FutureCarCard car="{!car}"/>
+        </aura:iteration>
+    </div>
+</aura:component>	

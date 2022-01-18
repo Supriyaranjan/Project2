@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-grid slds-wrap slds-m-top_small product-items">   
+        <div class="button-up">
+            <lightning-icon icon-name="utility:up" size="large" variant="inverse" onclick={handleUpAction}></lightning-icon>
+        </div>   
+        
+        <template for:each={displayCars} for:item="car">
+            <c-future-product-item car={car} key={car.ProductCode} onadditem={addItem} class="display-car-item"></c-future-product-item>
+        </template>
+        <div class="button-down">
+            <lightning-icon icon-name="utility:down" size="large" variant="inverse" onclick={handleDownAction}></lightning-icon>
+        </div>
+        
+        <c-future-product-proposal class="proposal-form"></c-future-product-proposal>
+    </div>
+</template>

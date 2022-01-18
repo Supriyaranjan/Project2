@@ -1,0 +1,94 @@
+.form {
+    background-color: rgb(255,255,255);
+    padding: 10px;
+    clear: both;
+    margin-top: 10rem;
+    border-radius: 25px;
+}
+
+.proposalName{
+    margin-right: 2 rem;
+    width: 30rem;
+    color:rgb(89,66,226);
+    border-radius: 5px;
+    border:1px solid red;
+}
+
+.proposalDescription{
+    margin-right: 2 rem;
+    width: 30rem;
+    color:rgb(89,66,226);
+    border-radius: 5px;
+    border:1px solid red;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color:black;
+}
+
+label {
+    padding: 15px;
+}
+
+.row {
+    width: 80%;
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.nameLabel{
+    font-size: 1rem;
+    text-align: left;
+    width: 15rem;
+    font-weight: bold;
+    color:rgb(203,203,203);
+}
+
+.submitButton {
+    text-align: center;
+}
+
+.button {
+    padding: 10px 50px;
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    border: none; 
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 50px;
+}
+.button:hover {
+    background-color: black;
+    cursor: pointer;
+}
+.proposalNotificationText {
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: rgb(65,40,249);
+    color: white;
+    margin: 0.25rem;
+    padding: 2px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 4px;
+    margin:0.25rem;
+    margin-bottom: 10px;
+}
+.nameErrorNotificationText{
+    font-size:1.25rem;
+    color: red;
+    margin: 0.25rem;
+}
+.descriptionErrorNotificationText{
+    font-size:1.25rem;
+    color: red;
+    margin: 0.25rem;
+}

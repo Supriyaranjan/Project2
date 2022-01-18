@@ -4,13 +4,13 @@
           <template for:each={contacts.data} for:item="contact">
             <div class="slds-grid slds-gutters" key={contact.Id}>  
               <div class="slds-col">
-                <span>{contact.FirstName} {contact.LastName}</span>
+                <span>Name: {contact.FirstName} {contact.LastName}</span>
               </div>
               <div class="slds-col">
-                <span>{contact.Phone}</span>
+                <span>Phone #: {contact.Phone}</span>
               </div>
               <div class="slds-col">
-                  <span>{contact.Email}</span>
+                  <span>Email: {contact.Email}</span>
                 </div>
             </div>
           </template>

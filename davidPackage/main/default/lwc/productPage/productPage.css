@@ -1,0 +1,4 @@
+:host {
+    --sds-c-button-neutral-color-background: red;
+    --sds-c-button-text-color: white;
+}

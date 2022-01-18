@@ -1,0 +1,19 @@
+<template>
+    <lightning-card  title="Profile Info">
+        <template if:true={contacts.data}>
+          <template for:each={contacts.data} for:item="contact">
+            <div class="slds-grid slds-gutters" key={contact.Id}>  
+              <div class="slds-col">
+                <span>Name: {contact.FirstName} {contact.LastName}</span>
+              </div>
+              <div class="slds-col">
+                <span>Phone #: {contact.Phone}</span>
+              </div>
+              <div class="slds-col">
+                  <span>Email: {contact.Email}</span>
+                </div>
+            </div>
+          </template>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <div class="form">
+        <div class="form-title">Your Future Car Proposal</div>
+        <p><lightning-formatted-text class="proposalNotificationText" value="Error" hidden={displayNotification}></lightning-formatted-text></p>
+
+        <div class="row">
+            <label for="proposalName" class="nameLabel">Proposal Name:</label>
+            <input type="text" class="proposalName">
+        </div>
+        <p><lightning-formatted-text class="nameErrorNotificationText" value="Error" hidden={displayNameError}></lightning-formatted-text></p>
+
+
+        <div class="row">
+            <label for="proposalDescription" class="nameLabel"> Proposal Description:</label>
+            <textarea rows="8" cols="60" class="proposalDescription"></textarea>
+        </div>
+        <p><lightning-formatted-text class="descriptionErrorNotificationText" value="Error" hidden={displayDescriptionError}></lightning-formatted-text></p>
+
+        <div class="submitButton">
+            <input class="button" type="submit" value="Submit" onclick={handleProposalSubmit}>
+        </div>
+    </div>
+</template>

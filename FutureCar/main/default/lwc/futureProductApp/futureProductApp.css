@@ -1,0 +1,59 @@
+.product-items {
+    /*justify-content: space-evenly;*/
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.button-up {
+    background-color: red;
+    width: 50px;
+    height: 40px;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.button-up:hover {
+    cursor:pointer;
+    background-color:black;
+}
+
+.button-down {
+    background-color: red;
+    width: 50px;
+    height: 40px;
+    justify-content: center;
+    margin-top: 0.5rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+.button-down:hover {
+    cursor:pointer;
+    background-color:black;
+}
+
+.cartNotificationText {
+    font-weight: bold;
+    font-size: 2rem;
+    color: green;
+}
+
+.display-car-item{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.proposal-form{
+    margin-top: 2rem;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}

@@ -13,36 +13,58 @@ export default class FutureProductApp extends LightningElement {
 
     @track
     displayIndex = 0;
-    
-
-    constructor() {
+    constructor(){
         super();
-        /*getFutureProducts().then(result => {
+        let newProducts =[{Name:'FutureElectricCar2', 
+            Description:'New Electric car', 
+            DisplayUrl: '/Electric/2.jpg',
+            ProductCode:'0022030'},
+            {Name:'FutureSportCar3', 
+            Description:'New sport car', 
+            DisplayUrl: '/sports/3.jpg',
+            ProductCode:'0032028'},
+            {Name:'FutureLuxuryCar5', 
+            Description:'New Luxury car', 
+            DisplayUrl: '/Luxury/5.jpg',
+            ProductCode:'0052027'},
+            {Name:'FutureLuxuryCar4', 
+            Description:'New Luxury car', 
+            DisplayUrl: '/Luxury/4.jpg',
+            ProductCode:'0042027'},
+            {Name:'FutureSportCar2', 
+            Description:'New sport car', 
+            DisplayUrl: '/sports/2.jpg',
+            ProductCode:'0022028'},
+            {Name:'FutureElectricCar4', 
+            Description:'New Electric car', 
+            DisplayUrl: '/Electric/4.jpg',
+            ProductCode:'0042027'}
+        ];
+        getFutureProducts().then(result => {
             this.futureCars = result;
             console.log(result.length);
             if(result.length < 3) {
-                let futureCars= [{Name: "FutureElCar2",
-                    Description: "Electric car",
-                    DisplayUrl: "/Electric/2.jpg",
-                    ProductCode: "0022028"},
-                    {Name: "FutureSportCar3",
-                    Description: "Sport car",
-                    DisplayUrl: "/sports/3.jpg",
-                    ProductCode: "0022027"},
-                    {Name: "FutureLuxuryCar5",
-                    Description: "Luxury car",
-                    DisplayUrl: "/Luxury/5.jpg",
-                    ProductCode: "0022029"}
-                ];
-                console.log(futureCars);
-                for(let i = 0; i < 3; i++) {
-                    saveFutureProduct(futureCars[i]);
+                for(let i = 0; i < newProducts.length; i++) {
+                    saveFutureProduct({currentProduct: newProducts[i]});
                 }
+                //Set timer to load products again after 200ms
+                setTimeout(() => {
+                    getFutureProducts().then(result1 => {
+                        this.futureCars = result1;
+                        for(let i=0; i < this.futureCars.length; i++) {
+                            this.futureCars[i].DisplayUrl = Future_Car + this.futureCars[i].DisplayUrl;
+                        }
+                        this.setDisplaycars();
+                    }).catch((error) => {
+                        console.log(error);
+                    });
+                }, 200);
             }
         }).catch((error) => {
             console.log(error);
-        });*/
+        });
     }
+
     //Get data from database when initialize
     connectedCallback() {
         getFutureProducts().then(result => {
@@ -51,6 +73,8 @@ export default class FutureProductApp extends LightningElement {
                 this.futureCars[i].DisplayUrl = Future_Car + this.futureCars[i].DisplayUrl;
             }
             this.setDisplaycars();
+            console.log("Connected");
+            console.log(this.futureCars);
         }).catch((error) => {
             console.log(error);
         });

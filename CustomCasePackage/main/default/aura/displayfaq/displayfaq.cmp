@@ -1,0 +1,22 @@
+<aura:component controller='CaseWebController' implements="force:appHostable, flexipage:availableForAllPageTypes, flexipage:availableForRecordHome, force:hasRecordId, forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />   
+    <aura:attribute name="faqs" type="FAQ__c[]"/>
+    <!--web to case section display-->
+        <c:webtocase></c:webtocase>
+
+    <!--section to display the FAQs-->
+        <lightning:card title="Frequently Asked Questions" iconName="utility:knowledge_base">
+            <!-- calling title search component -->
+            <c:searchfaq onfaqresult="{!c.getFaqResult}"></c:searchfaq>
+            <!--display results of search in the accordion-->
+            <lightning:accordion aura:id="accordion">
+                <aura:iteration items="{!v.faqs}" var="item" indexVar="index">
+                    <lightning:accordionSection name="{!item.Name}" label="{!item.Question__c}" >
+                        <aura:set attribute="body">
+                            <p>{!item.Answer__c}</p>
+                        </aura:set>
+                    </lightning:accordionSection>
+                </aura:iteration>
+            </lightning:accordion>
+        </lightning:card>
+</aura:component>	

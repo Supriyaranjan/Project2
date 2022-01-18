@@ -1,0 +1,13 @@
+.THIS .btn{
+    color: white;
+    background-color: red;
+    border:none;
+}
+.THIS .btn:hover{
+    background-color: lightgray;
+}
+
+.THIS .btn:focus{
+    background-color: black;
+    color: white;
+}

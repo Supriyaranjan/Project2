@@ -1,0 +1,16 @@
+<!--template to search for FAQs by topic-->
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <!--lightning-input type="text" label="FAQ Topic"  maxlength="10" value={input} onchange={faqTopicChange}></lightning-input-->  
+        <label class="slds-form-element__label" for="select-01">Select FAQ Topic</label>
+        <select class="slds-select" id="select-01" name="optionSelect" onchange={faqTopicChange} >
+            <template for:each={myTopics} for:item="item" for:index="index">
+                <option key={item} value={item}>{item}</option>
+            </template>
+        </select>
+    </div>
+    
+    <div class="slds-p-around_medium">
+    <lightning-button label="Search FAQ" icon-name="standard:search" onclick={getFAQsByTopic}></lightning-button>
+    </div>   
+</template>

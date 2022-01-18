@@ -19,7 +19,7 @@
          <br></br>
          <!--Home page-->
          <aura:If isTrue="{!v.showHome}">
-            <c:orderList></c:orderList>
+            <c:homePage></c:homePage>
         </aura:If>
         <!--Order page-->
         <aura:If isTrue="{!v.showOrder}">
